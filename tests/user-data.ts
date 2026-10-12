@@ -17,7 +17,6 @@ export function inputUserData(page: Page) {
             verify: async function(){
                 await expect(page.getByTestId("contact-success")).toContainText("Дякуємо! 🎉");
             },
-            sendAgain: () => page.locator(".btn-primary.mt-6").click()
 
         },
         {
