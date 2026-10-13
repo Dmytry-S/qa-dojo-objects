@@ -15,7 +15,7 @@ export function inputUserData(page: Page) {
                 sendMessage: () => page.getByTestId("contact-submit").click()
             },
             verify: async function(){
-                await expect(page.getByTestId("contact-success")).toContainText("Дякуємо! 🎉");
+                await expect.soft(page.getByTestId("contact-success")).toContainText("Дякуємо! 🎉");
             },
         },
         {
@@ -26,7 +26,7 @@ export function inputUserData(page: Page) {
                 sendMessage: () => page.getByTestId("contact-submit").click()
             },
             verify: async function(){
-                await expect(page.getByTestId("contact-success")).toContainText("Дякуємо! 🎉");
+                await expect.soft(page.getByTestId("contact-success")).toContainText("Дякуємо! 🎉");
             },
         },
         {
@@ -38,9 +38,9 @@ export function inputUserData(page: Page) {
                 sendMessage: () => page.getByTestId("contact-submit").click()
             },
             verify: async function(){
-                await expect(page.getByTestId("error-messages")).toContainText("name обов'язкове поле");
-                await expect(page.getByTestId("error-messages")).toContainText("email некоректний email");
-                await expect(page.getByTestId("error-messages")).toContainText("message обов'язкове поле");
+                await expect.soft(page.getByTestId("error-messages")).toContainText("name обов'язкове поле");
+                await expect.soft(page.getByTestId("error-messages")).toContainText("email некоректний email");
+                await expect.soft(page.getByTestId("error-messages")).toContainText("message обов'язкове поле");
             }
         }
     ]
